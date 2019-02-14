@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
-import './Header.css';
-import Styled from 'styled-components';
+import styled from 'styled-components';
+
+const HeaderTitle = styled.h1`
+  color: white;
+  font-size: 10rem;
+  position: relative;
+  top: 0;
+`
 
 export default class Header extends Component {
 
   render() {
     return(
-       <Header></Header>
+       <HeaderTitle>宇宙猫</HeaderTitle>
     )
   }
 }
-
-const Header = styled.h1`
-    font-size: 20rem;
-`
