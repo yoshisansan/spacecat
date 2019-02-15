@@ -1,24 +1,17 @@
-/* @flow */
-
 import React, { Component } from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-} from 'react-native';
+import styled from 'styled-components';
+import Neko from './spacecat.jpg';
 
-export default class MyComponent extends Component {
+const Img = styled.img`
+    width: 60rem;
+    border: solid 1.3rem #000;
+    border-radius: 3rem;
+`
+
+export default class Giphy extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>I'm the MyComponent component</Text>
-      </View>
+        <Img src={Neko} alt="宇宙猫" />
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-
-  },
-});
