@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import CatComment from './hukidashi-comment.png';
 
 const NyanCat = styled.div`
+
     display: grid;
     grid-template-columns: 1fr 2fr;
     color: white;
@@ -11,21 +12,41 @@ const NyanCat = styled.div`
     width: 70%;
     margin:0 auto;
     padding: 5rem 0;
+
+    @media only screen and (max-width: 756px)  {
+
+      width: 90%;
+  }
+
+
         `
 
 const Radius = styled.div`
-border-radius: 50% 50%;
-background-color: #fff;
-width: 120px;
-height: 120px;
-overflow: hidden;
-margin-left: 2rem;
+    border-radius: 50% 50%;
+    background-color: #fff;
+    width: 12rem;
+    height: 12rem;
+    overflow: hidden;
+    margin-left: 2rem;
 
   img {
-    width: 120px;
-    height: 120px;
+    width: 12rem;
+    height: 12rem;
     transform: scale(1.5);
   }
+
+  @media only screen and (max-width: 756px)  {
+
+      width: 9rem;
+      height: 9rem;
+
+    img {
+      width: 9rem;
+      height: 9rem;
+      transform: scale(1.5);
+    }
+}
+
 `
 
 export default class MyComponent extends Component {

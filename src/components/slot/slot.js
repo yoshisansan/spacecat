@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import SlotLogo from './slot.png';
 
 const Slotter = styled.img`
-    width: 50rem;
-    margin-top: 10rem;
+    width: 80%;
+    margin-top: 5rem;
     padding-left: 5rem;
 `
 
