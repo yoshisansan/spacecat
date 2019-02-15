@@ -1,10 +1,9 @@
-/* @flow */
-
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Neko from './spacecat.jpg';
 
-const Neko = styled.img`
-    width: 30rem;
+const Img = styled.img`
+    width: 60rem;
     border: solid 1.3rem #000;
     border-radius: 3rem;
 `
@@ -12,7 +11,7 @@ const Neko = styled.img`
 export default class Giphy extends Component {
   render() {
     return (
-        <Neko><img src={require('https://media1.giphy.com/media/RrIdGcnknHD0c/200.webp?cid=3640f6095c60480d6a2e70572e6f0d5c')} alt="宇宙猫" /></Neko>
+        <Img src={Neko} alt="宇宙猫" />
     );
   }
 }

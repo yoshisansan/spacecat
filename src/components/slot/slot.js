@@ -1,21 +1,17 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import SlotLogo from './slot.png';
 
-const Slot = styled.img`
+const Slotter = styled.img`
+    width: 50rem;
+    margin-top: 10rem;
+    padding-left: 5rem;
 `
 
-export default class MyComponent extends Component {
+export default class Slot extends Component {
   render() {
     return (
-      <Slot>
-        <img src={require('../img/slot.png')} alt="スロット" />
-      </Slot>
+      <Slotter src={SlotLogo} alt="slot" />
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
