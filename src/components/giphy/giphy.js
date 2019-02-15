@@ -7,10 +7,8 @@ const Img = styled.img`
     border: solid 1.3rem #000;
     border-radius: 3rem;
 
-    @media only screen and (max-width: 1026px)  {
-      img {
-
-      }
+    @media only screen and (min-width: 1278px)  {
+      width: 80%;
     }
 `
 
