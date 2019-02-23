@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+
+import Getgif from './Getgif';
+
 import Neko from './spacecat.jpg';
+
+// import axios from 'axios';
+
 
 const Img = styled.img`
     width: 100%;
@@ -15,7 +21,9 @@ const Img = styled.img`
 export default class Giphy extends Component {
   render() {
     return (
-        <Img src={Neko} alt="宇宙猫" />
+      <div>
+        <Getgif />
+      </div>
     );
   }
 }

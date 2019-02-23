@@ -19,6 +19,10 @@ const Wrapper = styled.div`
 // 時間が余ったらGiphyのところをマリオカートのハテナボックスみたいにしたい
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { spaceCat: [] };
+  }
 
   render() {
 

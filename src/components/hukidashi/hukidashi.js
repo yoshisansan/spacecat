@@ -15,10 +15,8 @@ const NyanCat = styled.div`
 
     @media only screen and (max-width: 756px)  {
 
-      width: 90%;
+        width: 90%;
   }
-
-
         `
 
 const Radius = styled.div`
