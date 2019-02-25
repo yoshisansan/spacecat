@@ -13,7 +13,15 @@ const Img = styled.img`
     border: solid 1.3rem #000;
     border-radius: 3rem;
 
-    @media only screen and (min-width: 1278px)  {
+    @media only screen and (max-width: 320px)  {
+      width: 65%;
+    }
+
+    @media only screen and (max-width: 768px)  {
+      width: 75%;
+    }
+
+    @media only screen and (max-width: 1024px)  {
       width: 80%;
     }
 `

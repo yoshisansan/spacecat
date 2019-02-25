@@ -14,6 +14,10 @@ const Wrapper = styled.div`
   text-align: center;
   margin: 0 auto;
   width: 60%;
+
+  @media only screen and (max-width: 724px)  {
+    width: 70%;
+  }
 `
 
 // 時間が余ったらGiphyのところをマリオカートのハテナボックスみたいにしたい

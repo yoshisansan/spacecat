@@ -3,21 +3,20 @@ import styled from 'styled-components';
 
 const TwitterBtn = styled.div`
 
+    width: 40rem;
     text-align: center;
-    margin: 0 auto;
-    margin-top: 8rem;
-    width: 60%;
-
+    margin: 8rem auto;
+    background-color: #55acee;
+    border-radius: 2rem;
 
       p {
-        background-color: #55acee;
         height: 7rem;
         color: #fff;
         line-height: 7rem;
-        border-radius: 2rem;
+
         justify-content: center;
         letter-spacing: 0.2rem;
-        font-size: 3.5rem;
+        font-size: 3rem;
         display:inline-block;
         padding: 0 1rem;
         white-space:nowrap;
@@ -27,15 +26,32 @@ const TwitterBtn = styled.div`
         padding-right: 0.8rem;
       }
 
-      @media only screen and (max-width: 1024px)  {
+
+      @media only screen and (max-width: 323px) {
+        margin: 6rem auto;
+        width: 20rem;
+
         p {
-          font-size: 2rem;
-          white-space:nowrap;
+          font-size: 1.7rem;
         }
 
       }
 
+      @media only screen and (min-width: 324px) and (max-width: 767px) {
+        margin: 6rem auto;
+        width: 25rem;
 
+        p {
+          font-size: 2.2rem;
+        }
+
+      }
+
+      @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        width: 35rem;
+
+
+        }
 
 `
 

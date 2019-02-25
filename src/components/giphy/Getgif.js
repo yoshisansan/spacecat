@@ -5,16 +5,25 @@ import axios from 'axios';
 
 
 const Img = styled.img`
-    width: 100%;
-    height: 30rem;
+    width: 40rem;
+    height: 40rem;
+
+    margin-top: 1.5rem;
     border: solid 1.3rem #000;
     border-radius: 3rem;
 
-    @media only screen and (min-width: 1278px)  {
-      width: 80%;
+    @media only screen and (max-width: 1024px)  {
+      width: 30rem;
+      height: 30rem;
+      // -webkit- box-sizing:border-box;
+      // box-sizing:border-box;
+    }
+
+    @media only screen and (max-width: 728px)  {
+      width: 21rem;
+      height: 21rem;
     }
 `
-
 
 export default class Getgif extends Component {
   constructor(){
