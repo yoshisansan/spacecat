@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-
+import Vita from './Vita.jpg';
 import axios from 'axios';
 
+let count = 0;
 
 const Img = styled.img`
     width: 40rem;
     height: 40rem;
+    cursor: pointer;
 
     margin-top: 1.5rem;
     border: solid 1.3rem #000;
@@ -15,8 +17,7 @@ const Img = styled.img`
     @media only screen and (max-width: 1024px)  {
       width: 30rem;
       height: 30rem;
-      // -webkit- box-sizing:border-box;
-      // box-sizing:border-box;
+
     }
 
     @media only screen and (max-width: 728px)  {
@@ -26,26 +27,47 @@ const Img = styled.img`
 `
 
 export default class Getgif extends Component {
-  constructor(){
-    super();
-    this.state = { gifUrlList: [] }
+  constructor(props){
+    super(props);
+    this.state = { gifUrlList: Vita };
   }
 
+
   componentDidMount() {
-  this.giphyApi();
+  // this.giphyApi();
 }
 
   render(){
-
+    // const switchOn = this.props.slotSwitch === "ON" ? true : false;
+    const switchOn = this.props.slotSwitch;
+    this.SwitchFlag(switchOn);
     return(
       <Img src={this.state.gifUrlList} />
     );
   }
 
+  // this.GoSlot();
+
+  SwitchFlag = (switchOn) => {
+
+    if(switchOn === "ON"){
+      if(count < 1 ){
+        console.log("GO!");
+        this.giphyApi();
+        count++;
+      }
+    }
+      // else if(this.props.slotSwitch === "STOP"){
+      //   clearTimeout(this.TimeGo)
+      //   console.log("STOPメソッド発動");
+      // }
+
+  }
+
   giphyApi() {
   const search = "space cat";
   const key = "P8jSOBEO7BzFdCudvpCKNzqqwIJXNsrY";
-  const limit = 10;
+  const limit = 15;
 
   const url = `https://api.giphy.com/v1/gifs/search?q=${search}&api_key=${key}&limit=${limit}`;
 
@@ -53,11 +75,15 @@ export default class Getgif extends Component {
       const data = res.data.data;
       const imageUrlList = data.map(item => item.images.downsized.url);
 
+//Promiseか何かで順番に処理できるようにしたい
+
       // this.setState({ gifUrlList: imageUrlList });
       // console.log(imageUrlList);
       this.remove(imageUrlList);
     });
   }
+
+  // clearTimeout(this.TimeGo);
 
   remove(imageUrlList) {
   const removeImgs = [
@@ -94,11 +120,20 @@ export default class Getgif extends Component {
 
   TimeGo(list) {
     setTimeout(() => {
+
+      if(this.props.slotSwitch === "STOP"){
+        clearTimeout(this.TimeGo);
+        console.log("STOPメソッド発動");
+        count = 0;
+        return;
+      }
+
       const random = Math.floor(Math.random() * list.length);
       this.setState({ gifUrlList: list[random] });
       console.log(list[random]);
+
       this.TimeGo(list);
-    }, 1000);
+    }, 700);
   }
 
 }

@@ -3,9 +3,12 @@ import styled from 'styled-components';
 
 const TwitterBtn = styled.div`
 
+    display: ${props => props.Display === "ON" ? 'none' : 'inline-block'};
+    // display: ${props => props.Display === "ON" || 'undefine' ? 'none' : 'inline-block'};
+
     width: 40rem;
     text-align: center;
-    margin: 8rem auto;
+    margin: 6rem auto;
     background-color: #55acee;
     border-radius: 2rem;
 
@@ -52,13 +55,14 @@ const TwitterBtn = styled.div`
 
 
         }
-
 `
 
 export default class Twitter extends Component {
+
+
   render() {
     return (
-      <TwitterBtn><p><span className="fab fa-twitter"></span>宇宙猫を解放する</p></TwitterBtn>
+      <TwitterBtn Display={this.props.ShareDisplay}><p><span className="fab fa-twitter"></span>宇宙猫を解放する</p></TwitterBtn>
     );
   }
 }
