@@ -1,5 +1,6 @@
 {
   "projects": {
-    "spacecat": "spacecat-777"
+    "spacecat": "spacecat-777",
+    "default": "spacecat-777"
   }
 }
