@@ -3,14 +3,30 @@ import styled from 'styled-components';
 
 const TwitterBtn = styled.div`
 
-    display: ${props => props.Display === "ON" ? 'none' : 'inline-block'};
-    // display: ${props => props.Display === "ON" || 'undefine' ? 'none' : 'inline-block'};
+    animation: ${props => props.Display === "STOP" ? 'squash 0.3s ease-in-out' : 'none'};
+    background-color: ${props => props.Display === "STOP" ? '#55acee' : 'gray'};
 
     width: 40rem;
     text-align: center;
     margin: 6rem auto;
-    background-color: #55acee;
     border-radius: 2rem;
+
+    @keyframes squash {
+      0% {transform: scale(1) translate(0, 0);}
+      50% {transform: scale(1.5, .5) translate(0, 0.5rem);}
+      100% {transform: scale(1) translate(0, 0);}
+    }
+
+    @keyframes fadeout {
+      0% {transform: translate(0, 0);}
+      50% {
+        transform: translate(0, 0.3rem);
+
+      }
+      100% {transform: translate(0, 0.6rem);
+
+      }
+    }
 
       p {
         height: 7rem;

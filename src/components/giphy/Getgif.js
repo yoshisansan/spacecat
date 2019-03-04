@@ -11,7 +11,7 @@ const Img = styled.img`
     cursor: pointer;
 
     margin-top: 1.5rem;
-    border: solid 1.3rem #000;
+    border: solid 1.1rem #000;
     border-radius: 3rem;
 
     @media only screen and (max-width: 1024px)  {

@@ -21,13 +21,12 @@ const Wrapper = styled.div`
 `
 const Button = styled.button`
 
-  margin-bottom: ${props => props.AdjustBottom === "ON" ? '19rem' : '0'};
+  // margin-bottom: ${props => props.AdjustBottom === "STOP" ? '0' : '19rem'};
 
   width: 70%;
   max-width: 50rem;
   text-align: cetner;
   margin-top: 4rem;
-  margin-left: 2rem;
   cursor: pointer;
   background-color: #343d46;
   border: none;
@@ -53,11 +52,10 @@ let SwitchCount = 0;
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { spaceCat: [],
-        slotSwitch: [],
-        ShareDisplay: []
-    };
+    this.state = { slotSwitch: [] };
   }
+
+  //ONとSTOPの切り替え
   getSwitch = event => {
     if(SwitchCount > 1){
       SwitchCount = 0;
@@ -75,7 +73,7 @@ class App extends Component {
         <Header />
         <Getgif slotSwitch={this.state.slotSwitch}/>
         <Button onClick={this.getSwitch} AdjustBottom={this.state.slotSwitch}>
-          <Slot />
+          <Slot Slots={this.state.slotSwitch} />
         </Button>
         <Twitter ShareDisplay = {this.state.slotSwitch} />
         <Hukidashi />
